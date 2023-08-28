@@ -2,7 +2,7 @@
 name: Compilation Issue
 about: Having a Cocoapods / Carthage / SPM problem when linking the SDK?
 title: ''
-labels: compilation issue
+labels: ''
 assignees: ''
 
 ---

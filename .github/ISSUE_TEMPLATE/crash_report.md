@@ -2,7 +2,7 @@
 name: Crash
 about: Noticed the SDK crash?
 title: ''
-labels: crash
+labels: ''
 assignees: ''
 
 ---
