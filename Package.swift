@@ -45,6 +45,8 @@ let package = Package(
     ],
     dependencies: [
         .package(name: "PLCrashReporter", url: "https://github.com/microsoft/plcrashreporter.git", from: "1.11.1"),
+        .package(name: "opentelemetry-swift-api", path: "../opentelemetry-swift-api"),
+        .package(name: "opentelemetry-swift", path: "../opentelemetry-swift")
     ],
     targets: [
         .target(
@@ -105,6 +107,7 @@ let package = Package(
             name: "DatadogTrace",
             dependencies: [
                 .target(name: "DatadogInternal"),
+                .product(name: "OpenTelemetryApi", package: "opentelemetry-swift-api")
             ],
             path: "DatadogTrace/Sources"
         ),

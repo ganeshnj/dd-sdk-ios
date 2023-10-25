@@ -26,6 +26,13 @@ internal struct DDSpanContext: OTSpanContext {
             }
         }
     }
+    
+    init(traceID: TraceID, spanID: SpanID, parentSpanID: SpanID?, baggageItems: BaggageItems) {
+        self.traceID = traceID
+        self.spanID = spanID
+        self.parentSpanID = parentSpanID
+        self.baggageItems = baggageItems
+    }
 }
 
 /// Baggage items are used to propagate span information from parent to child. This propagation is

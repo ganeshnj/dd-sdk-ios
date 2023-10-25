@@ -6,6 +6,30 @@
 
 import Foundation
 import DatadogInternal
+import OpenTelemetryApi
+
+extension TraceId {
+    func toDatadog() -> TraceID {
+        return .init(self.hexString)!
+    }
+}
+
+extension SpanId {
+    func toDatadog() -> TraceID {
+        return .init(self.hexString)!
+    }
+}
+
+extension OpenTelemetryApi.SpanContext {
+    func toDatadog() -> DDSpanContext {
+        fatalError()
+    }
+}
+
+protocol DatadogConvertible {
+    associatedtype T
+    func toDatadog() -> T?
+}
 
 internal final class DDSpan: OTSpan {
     /// The `Tracer` which created this span.
