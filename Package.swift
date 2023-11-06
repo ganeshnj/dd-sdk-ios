@@ -4,7 +4,7 @@ import PackageDescription
 import Foundation
 
 let package = Package(
-    name: "Datadog",
+    name: "dd-sdk-ios",
     platforms: [
         .iOS(.v11),
         .tvOS(.v11)
@@ -45,8 +45,8 @@ let package = Package(
     ],
     dependencies: [
         .package(name: "PLCrashReporter", url: "https://github.com/microsoft/plcrashreporter.git", from: "1.11.1"),
-        .package(name: "opentelemetry-swift-api", path: "../opentelemetry-swift-api"),
-        .package(name: "opentelemetry-swift", path: "../opentelemetry-swift")
+        .package(url: "https://github.com/ganeshnj/opentelemetry-swift-api", branch: "main"),
+        .package(url: "https://github.com/ganeshnj/opentelemetry-swift", branch: "main"),
     ],
     targets: [
         .target(
